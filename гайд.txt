@@ -1,0 +1,68 @@
+ГАЙД ПО УСТАНОВКЕ ПЛАГИНА
+
+ВНИМАНИЕ:
+- Не запускайте скрипты из архива .zip — сначала РАЗАРХИВИРУЙТЕ их.
+- Обязательно используйте Python 3.11.
+- Для Ubuntu (VDS) и Windows — действия идентичны, разница только в пути к папке проекта.
+
+1. ЕСЛИ FUNPAYCARDINAL ЕЩЁ НЕ УСТАНОВЛЕН:
+
+1.1 Установите Termius (если работаете с VDS через Windows):
+https://www.termius.com/download/windows
+
+1.2 Установите ОС Ubuntu 22.04 на сервер.
+
+кряк группы смм плагина от ExFador принадлежит - https://t.me/FireHeadFPC
+
+1.3 Скачайте FunPayCardinal с GitHub:
+https://github.com/sidor0912/FunPayCardinal
+
+1.4 Разархивируйте папку и переименуйте (например, в fp_main)
+
+1.5 Перенесите папку fp_main на VDS (через SFTP, например через Termius или WinSCP)
+
+1.6 Подключитесь к серверу и выполните команды:
+
+sudo apt update
+sudo apt install -y python3.11 python3-pip curl screen
+
+Проверьте установку pip:
+
+python3.11 -m pip --version
+
+Если не установлен:
+
+кряк группы смм плагина от ExFador принадлежит - https://t.me/FireHeadFPC
+
+curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11
+
+Установите зависимости:
+
+python3.11 -m pip install bs4 requests requests_toolbelt matplotlib colorama psutil pymysql telebot telegrambotapi loguru pyarmor
+
+1.7 Запуск:
+
+cd ~/fp_main
+screen -S FP
+PYTHONIOENCODING=utf-8 python3.11 main.py
+
+2. ЕСЛИ FUNPAYCARDINAL УЖЕ УСТАНОВЛЕН:
+
+2.1 Убедитесь, что установлен Python 3.11 и зависимости:
+
+python3.11 -m pip install --upgrade pip
+python3.11 -m pip install bs4 requests requests_toolbelt matplotlib colorama psutil pymysql telebot telegrambotapi loguru pyarmor
+
+2.2 Скачайте плагин и разархивируйте.
+
+2.3 Перенесите **всё содержимое** архива в папку `plugins` внутри проекта FunPayCardinal (например, ~/fp_main/plugins)
+
+2.4 Перезапустите Cardinal:
+
+кряк группы смм плагина от ExFador принадлежит - https://t.me/FireHeadFPC
+
+screen -r FP
+(Остановите текущий процесс Ctrl+C)
+Запустите снова:
+
+PYTHONIOENCODING=utf-8 python3.11 main.py
